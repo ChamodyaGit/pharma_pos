@@ -144,32 +144,5 @@
     }
 </script>
 
-<script>
-    function filterMedicines(type) {
-        const today = new Date();
-        const rows = document.querySelectorAll("#itemsTable tbody tr");
-
-        rows.forEach(row => {
-            const exdText = row.cells[6].innerText.trim(); // EXD column
-            const exdDate = new Date(exdText);
-
-            let show = true;
-
-            if (type === "expired") {
-                show = exdDate < today; // expired if EXD < today
-            }
-            else if (type === "aboutToExpire") {
-                const diffDays = (exdDate - today) / (1000 * 60 * 60 * 24);
-                show = diffDays >= 0 && diffDays <= 30; // within 30 days
-            }
-            else if (type === "all") {
-                show = true; // show all rows
-            }
-
-            row.style.display = show ? "" : "none";
-        });
-    }
-</script>
-
 
 </html>

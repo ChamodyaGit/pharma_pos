@@ -90,11 +90,11 @@
         <div class="px-12 max-sm:px-6 pt-5 flex w-full items-center max-md:flex-col justify-between gap-3">
             <span class="w-fit max-md:w-full max-md:justify-center flex gap-3 max-sm:gap-1 max-[350px]:scale-75">
                 <button onclick="filterMedicines('aboutToExpire')"
-                    class="py-3 px-6 max-sm:px-3 max-sm:py-1 bg-black text-white rounded-lg">
+                    class="py-3 px-6 max-sm:px-3 max-sm:py-1 bg-orange-500 text-white rounded-lg">
                     About to expire
                 </button>
                 <button onclick="filterMedicines('expired')"
-                    class="py-3 px-6 max-sm:px-3 max-sm:py-1 bg-black text-white rounded-lg">
+                    class="py-3 px-6 max-sm:px-3 max-sm:py-1 bg-red-600 text-white rounded-lg">
                     Expired
                 </button>
                 <button onclick="filterMedicines('all')"
@@ -143,7 +143,7 @@
                                 <button class="p-2 border-2 bg-red-600 text-white rounded-lg">Delete</button>
                             </td>
                         </tr>
-                        <tr class="bg-gray-50 border-2 text-black">
+                        <tr class="bg-gray-50 border-2 text-black text-red-600">
                             <td class="px-6 py-2 font-medium">2</td>
                             <td class="px-6 py-2">Amoxicillin</td>
                             <td class="px-6 py-2">Antibiotic</td>
@@ -156,14 +156,14 @@
                                 <button class="p-2 border-2 bg-red-600 text-white rounded-lg">Delete</button>
                             </td>
                         </tr>
-                        <tr class="bg-white border-2 text-black">
+                        <tr class="bg-white border-2 text-black text-orange-500">
                             <td class="px-6 py-2 font-medium">3</td>
                             <td class="px-6 py-2">Cetirizine</td>
                             <td class="px-6 py-2">Allergy</td>
                             <td class="px-6 py-2 text-right">35</td>
                             <td class="px-6 py-2 text-right">200</td>
                             <td class="px-6 py-2">2023-02-05</td>
-                            <td class="px-6 py-2">2025-10-05</td>
+                            <td class="px-6 py-2">2025-09-29</td>
                             <td class="px-6 py-2 flex gap-2">
                                 <button class="p-2 border-2 rounded-lg">Edit</button>
                                 <button class="p-2 border-2 bg-red-600 text-white rounded-lg">Delete</button>
@@ -182,7 +182,7 @@
                                 <button class="p-2 border-2 bg-red-600 text-white rounded-lg">Delete</button>
                             </td>
                         </tr>
-                        <tr class="bg-white border-2 text-black">
+                        <tr class="bg-white border-2 text-black text-red-600">
                             <td class="px-6 py-2 font-medium">5</td>
                             <td class="px-6 py-2">Vitamin C</td>
                             <td class="px-6 py-2">Supplement</td>
@@ -231,7 +231,7 @@
             }
             else if (type === "aboutToExpire") {
                 const diffDays = (exdDate - today) / (1000 * 60 * 60 * 24);
-                show = diffDays >= 0 && diffDays <= 30; // within 30 days
+                show = diffDays >= 0 && diffDays <= 7; // within 30 days
             }
             else if (type === "all") {
                 show = true; // show all rows
