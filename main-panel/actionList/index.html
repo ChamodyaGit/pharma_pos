@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application | Customer List</title>
+    <title>Application | Action List</title>
     <link rel="icon" href="../../../images/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
@@ -58,25 +58,11 @@
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" d="m1 9 4-4-4-4" />
                             </svg>
-                            <p class="ms-1 text-sm font-medium text-gray-700 md:ms-2">Customer List</p>
+                            <p class="ms-1 text-sm font-medium text-gray-700 md:ms-2">Action List</p>
                         </div>
                     </li>
                 </ol>
             </nav>
-        </div>
-        <!-- Search -->
-        <div class="px-12 max-sm:px-6 pt-5 flex flex-wrap md:flex-nowrap w-full items-center justify-between gap-3">
-            <!-- Search Input + Button -->
-            <div class="flex flex-col sm:flex-row sm:items-center sm:gap-3 w-full md:w-3/4">
-                <label for="search_item" class="mb-2 sm:mb-0">Search</label>
-                <input type="text" id="search_item" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
-                           focus:border-blue-500 block w-full sm:w-2/3 p-2.5" placeholder="Search by medicine name"
-                    required />
-                <button onclick="searchItems('search_item', 'itemsTable', 1);"
-                    class="py-2 sm:py-3 px-4 sm:px-6 bg-basic text-white rounded-lg mt-2 sm:mt-0">
-                    Search
-                </button>
-            </div>
         </div>
 
         <!--table-->
@@ -88,68 +74,45 @@
                     <thead class="text-xs text-white uppercase bg-basic">
                         <tr>
                             <th scope="col" class="px-6 py-3 rounded-tl-lg">#</th>
-                            <th scope="col" class="px-6 py-3">Name</th>
-                            <th scope="col" class="px-6 py-3">Age</th>
-                            <th scope="col" class="px-6 py-3">Phone</th>
-                            <th scope="col" class="px-6 py-3">Address</th>
-                            <th scope="col" class="px-6 py-3 rounded-tr-lg">Manage</th>
+                            <th scope="col" class="px-6 py-3">Action</th>
+                            <th scope="col" class="px-6 py-3">Description</th>
+                            <th scope="col" class="px-6 py-3">Role</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="bg-gray-50 border-2 text-black">
                             <td class="px-6 py-2 font-medium">1</td>
-                            <td class="px-6 py-2">Chaminda Perera</td>
-                            <td class="px-6 py-2">34</td>
-                            <td class="px-6 py-2">077-1234567</td>
-                            <td class="px-6 py-2">Colombo 05</td>
-                            <td class="px-6 py-2 flex gap-2">
-                                <button class="p-2 border-2 rounded-lg">Edit</button>
-                                <button class="p-2 border-2 bg-red-600 text-white rounded-lg">Delete</button>
-                            </td>
+                            <td class="px-6 py-2">Add New Medicine</td>
+                            <td class="px-6 py-2">Register a new drug with details like name, type, expiry date, and
+                                stock count.</td>
+                            <td class="px-6 py-2">System Admin / Pharmacist</td>
                         </tr>
                         <tr class="bg-white border-2 text-black">
                             <td class="px-6 py-2 font-medium">2</td>
-                            <td class="px-6 py-2">Nimali Fernando</td>
-                            <td class="px-6 py-2">28</td>
-                            <td class="px-6 py-2">071-9876543</td>
-                            <td class="px-6 py-2">Kandy</td>
-                            <td class="px-6 py-2 flex gap-2">
-                                <button class="p-2 border-2 rounded-lg">Edit</button>
-                                <button class="p-2 border-2 bg-red-600 text-white rounded-lg">Delete</button>
+                            <td class="px-6 py-2">Manage Customers</td>
+                            <td class="px-6 py-2">View, add, or edit customer information (name, age, contact, address).
                             </td>
+                            <td class="px-6 py-2">Pharmacist / Cashier</td>
                         </tr>
                         <tr class="bg-gray-50 border-2 text-black">
                             <td class="px-6 py-2 font-medium">3</td>
-                            <td class="px-6 py-2">Sahan Jayawardena</td>
-                            <td class="px-6 py-2">41</td>
-                            <td class="px-6 py-2">075-4567890</td>
-                            <td class="px-6 py-2">Galle</td>
-                            <td class="px-6 py-2 flex gap-2">
-                                <button class="p-2 border-2 rounded-lg">Edit</button>
-                                <button class="p-2 border-2 bg-red-600 text-white rounded-lg">Delete</button>
-                            </td>
+                            <td class="px-6 py-2">Sales & Billing</td>
+                            <td class="px-6 py-2">Process medicine sales, generate bills, and apply discounts.</td>
+                            <td class="px-6 py-2">Cashier</td>
                         </tr>
                         <tr class="bg-white border-2 text-black">
                             <td class="px-6 py-2 font-medium">4</td>
-                            <td class="px-6 py-2">Dilani Weerasinghe</td>
-                            <td class="px-6 py-2">36</td>
-                            <td class="px-6 py-2">076-3216549</td>
-                            <td class="px-6 py-2">Kurunegala</td>
-                            <td class="px-6 py-2 flex gap-2">
-                                <button class="p-2 border-2 rounded-lg">Edit</button>
-                                <button class="p-2 border-2 bg-red-600 text-white rounded-lg">Delete</button>
+                            <td class="px-6 py-2">Stock Management</td>
+                            <td class="px-6 py-2">Monitor available stock, check low stock alerts, and update inventory.
                             </td>
+                            <td class="px-6 py-2">Pharmacist</td>
                         </tr>
                         <tr class="bg-gray-50 border-2 text-black">
                             <td class="px-6 py-2 font-medium">5</td>
-                            <td class="px-6 py-2">Ravindu Silva</td>
-                            <td class="px-6 py-2">22</td>
-                            <td class="px-6 py-2">078-1122334</td>
-                            <td class="px-6 py-2">Negombo</td>
-                            <td class="px-6 py-2 flex gap-2">
-                                <button class="p-2 border-2 rounded-lg">Edit</button>
-                                <button class="p-2 border-2 bg-red-600 text-white rounded-lg">Delete</button>
-                            </td>
+                            <td class="px-6 py-2">Expiry Alerts</td>
+                            <td class="px-6 py-2">Track medicines that are expired or near expiry with red/yellow
+                                indicators.</td>
+                            <td class="px-6 py-2">Pharmacist</td>
                         </tr>
                     </tbody>
                 </table>
